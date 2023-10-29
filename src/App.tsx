@@ -61,6 +61,7 @@ function App() {
     const formatPhoneNumber = (phoneNumber: string, inputNumber: string) => {
         inputNumber= inputNumber.replace('(', '');
         inputNumber= inputNumber.replace(')', '');
+        inputNumber = inputNumber.replace(' ', '');
         let indexResult = getSubstringStartAndEndIndex(phoneNumber, inputNumber);
         let foundIndex = indexResult.startIndex;
         let lastIndex = indexResult.endIndex;
@@ -93,7 +94,7 @@ function App() {
     return (
         <>
             <main>
-                { formatPhoneNumber('(123) 456-5663', '(656)') }
+                { formatPhoneNumber('(123) 456-5663', '(345) 65') }
             </main>
         </>
     )
